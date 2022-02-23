@@ -1,18 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Poppins', serif;
     touch-action: manipulation;
     margin: 0;
     color:white;
-    
+    background-color: rgb(1, 12, 24); 
+    background-image: url(images/right.png), url(images/left.png);
+    background-size: 10em;
+    background-position: bottom right, bottom left;
+    background-repeat: no-repeat;
 }  
-main section{
-    max-width: 50em;
+img{
+    width: 100%;
+    height:100%;
+    object-fit: contain;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+section{
     margin: 0 auto;
     padding: 0 2em;
+    max-width: 55em;
 }
-h1{
-    font-size: 5em;
-    margin: 0 0 12px;
+.content{
+    display: grid;
+    gap: 3em;
 }
 p{
     font-size: 1.3em;
@@ -20,14 +39,85 @@ p{
 }
 .intro{
     text-align: center;
+    font-size: 1em;
 }
 header{
-    background-image:linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgb(6, 23, 41) 100%), url(images/banner.jpg); 
-    padding: 9em 0 1px;
+    background-image:linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgb(6, 23, 41) 100%), url(images/banner.jpg); 
+    padding: 12em 0 2em;
     background-position: center;
     text-align: center;
 }
+header img{
+    height: 160px;
+}
 main{
-    background: linear-gradient(180deg, rgb(6, 23, 41) 0%, rgb(1, 12, 24) 100%);
+    background: linear-gradient(180deg, rgb(6, 23, 41) 0%, rgb(1 12 24 / 0%) 100%);
     overflow: auto;
+}
+video{
+    margin: 10px 0;
+    box-shadow: 0 0 3em rgba(0, 255, 255, 0.2);
+    border-radius: 16px;
+}
+hr{
+    margin: 5em 0;
+}
+nav{
+    display: flex;
+    gap: 1.2em;
+    justify-content: center;
+    margin: 4em 0;
+    flex-wrap: wrap;
+}
+nav a{
+    padding: .7em 1.2em;
+    background-color: rgb(1, 12, 24);
+    border: 1px solid aqua;
+    box-shadow: 0 0 0 0 transparent;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .1s ease;
+}
+nav a:hover{
+    border: 1px solid rgba(255, 140, 0);
+    box-shadow: 0 0 0 2px rgba(255, 140, 0);
+}
+.img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-container img{
+    height: 200px;
+}
+.heimildir{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: .8em;
+}
+.heimildir a{
+    color: aqua;
+    text-decoration: underline;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+.heimildir a:hover{
+    color:rgba(255, 140, 0);
+}
+@media screen and (min-width: 48em) {
+    .content{
+        grid-template-columns: 1fr 1fr;
+    }
+    body{
+        background-size: 40em;
+    }
+    hr{
+        margin: 5em -6em;
+    }
+}
+@media screen and (max-width: 48em) {
+    .content .text-container{
+        grid-row: 1;
+    }
 }
