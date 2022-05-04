@@ -1,0 +1,46 @@
+@keyframes spinzoom {
+    0%   {transform: scale(1);transform: rotate(260deg);}
+    50%  {transform: scale(0.5);}
+    100% {transform: scale(1);transform: rotate(0deg);}
+  }
+@keyframes down {
+    0%   {transform: translateY(-80px)}
+    100% {transform: translateY(0px)}
+  }
+@keyframes upappear {
+    0%   {transform: translateY(160px);opacity: 0;}
+    100% {transform: translateY(0px);opacity: 1;}
+  }
+@keyframes slideright {
+    0%   {transform: translatex(-260px)}
+    100% {transform: translateY(0px)}
+  }
+@keyframes shadow {
+  0%   {box-shadow: -148px -148px 42px rgba(0, 0, 0, 0.4);}
+  100% {}
+}
+  
+.mobile-img{
+    animation-name: spinzoom;
+    animation-duration: 3s;
+}
+.nav-container{
+    animation-name: down;
+    animation-duration: 2s;
+}
+h1, h2, h3, h4, h5, h6, p, a{
+    animation-name: upappear;
+    animation-duration: 3s;
+}
+.topmenu li{
+    animation-name: down;
+    animation-duration: 3s;
+}
+.intro{
+    animation-name: slideright;
+    animation-duration: 2s;
+}
+.intro-img, .album-container{
+  animation-name: shadow, spinzoom;
+  animation-duration: 2s;
+}

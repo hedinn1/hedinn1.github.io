@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Verkefni 2">
+    <meta name="author" content="GJG">
+    <title>Verkefni 7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="icomoon.css">
+    <link rel="stylesheet" href="animation.css">
+
+    <link rel="icon" type="image/svg" href="images/rwd-icon.svg">
+</head>
+<body id="top">
+
+  <div class="nav-container">
+    <input type="checkbox" class="menuinput" id="toggle">
+    <label for="toggle" class="menubutton">&#9776;</label>
+    <nav class="topnav">
+        <ul class="topmenu">
+            <img width="50" src="images/logoMini.svg">
+            <li><a href="#top">Inngangur</a><span class="icon-home"></span></li>
+            <li><a href="#um">Um Balthazar</a><span class="icon-profile"></span></li>
+            <li><a href="#albumin">Topp Albúmin</a><span class="icon-music"></span></li>
+            <li><a href="#dagskra">Dagskrá & miðasala</a><span class="icon-table2"></span></li>
+            <li><a href="#contact">Hafa samband</a><span class="icon-bubbles"></span></li>
+        </ul>
+    </nav>
+  </div>
+
+  <div class="top-logo">
+    <img src="images/logo.png">
+  </div>
+  
+  <header id="top">
+    <div>
+      <h1>Balthazar</h1>
+      <h2>Í Laugardalshöll • 6-8 júní</h3>
+    </div>
+  </header>
+
+  <main>
+    <section class="col-2 intro">
+      <div class="intro-img">
+        <img src="images/tonleikar.jpg" alt="">
+      </div>
+      <div class="intro-text">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae velit sint assumenda quasi. Similique dicta vitae praesentium! Iusto maiores exercitationem facere placeat. Reprehenderit laudantium minima quibusdam laboriosam corporis accusamus similique!</p>
+      </div>
+    </section>
+    <h2 id="um">Um Balthazar</h2>
+    <section class="col-2 about">
+      
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eveniet explicabo odio repellat quaerat temporibus dolores. Delectus dolores ipsum esse velit, odio iste autem. Ut sequi a repellat cum quas!</p>
+      </div>
+      <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sunt at quia tempora commodi a nostrum temporibus fuga, doloremque similique incidunt ducimus explicabo, eum amet. Eius fugiat alias exercitationem ullam!</p>
+      </div>
+    </section>
+    <h2 id="albumin" class="center">Topp albúmin</h2>
+    <section class="col-3">
+      <div>
+        <div class="album-container">
+          <img src="images/fever.jpg">
+        </div>
+        <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias debitis illum neque officia odio doloremque, aut, optio nisi corrupti quas perferendis</p>
+      </div>
+      <div>
+        <div class="album-container">
+          <img src="images/thinwalls.jpg">
+        </div>
+        <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias debitis illum neque officia odio doloremque, aut, optio nisi corrupti quas perferendis</p>
+      </div>
+      <div>
+        <div class="album-container">
+          <img src="images/sand.jpg">
+        </div>
+        <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias debitis illum neque officia odio doloremque, aut, optio nisi corrupti quas perferendis</p>
+      </div>
+    </section>
+
+    <h2 id="dagskra" class="right">Dagskrá & Miðasala</h2>
+    <div class="schedule">
+      <table class="container">
+        <thead>
+            <tr> 
+                <th scope="col">HVAR</th>
+                <th scope="col">HVENÆR</th>
+                <th class="right" scope="col">MIÐAKAUP</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="HVAR">Laugardalshöll</td>
+                <td data-label="HVENÆR">6. júní kl. 20:00</td>
+                <td class="right" data-label="MIÐAKAUP"><button>KAUPA MIÐA</button></td>
+            </tr>
+            <tr>
+                <td data-label="HVAR" >Laugardalshöll</td>
+                <td data-label="HVENÆR" >7. júní kl. 21:00</td>
+                <td class="right" data-label="MIÐAKAUP" ><button>KAUPA MIÐA</button></td>
+            </tr>
+            <tr>
+                <td data-label="HVAR" >Laugardalshöll</td>
+                <td data-label="HVENÆR" >8. júní kl. 19:00</td>
+                <td class="right" data-label="MIÐAKAUP" ><button>KAUPA MIÐA</button></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="contact">Hefurðu fyrirspurn?</h2>
+
+    <section class="container form-container col-2">
+      <form action="" method="GET">
+        <div>
+          <input type="text" name="name" id="name" required placeholder="Nafn" autofocus>
+        </div>
+        <div>
+          <input type="tel" name="phone" id="phone" required placeholder="Sími" pattern="\d{3}(?:[\-\s]?)\d{4}" title="Vinsamlegast skráið aðeins 7 tölustafi">
+        </div>
+        <div>
+          <input type="email" name="email" id="email" required placeholder="Tölvupóstur" >
+        </div>
+        <div>
+          <textarea rows="6" placeholder="Hvað viltu segja?"></textarea>
+        </div>
+        <div>
+          <input type="submit" value="Senda skilaboð">
+        </div>
+      </form>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2460.996408534808!2d-21.8797636052987!3d64.14106058636355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48d674be2b114ee9%3A0xa2418dfee7b696a4!2sLaugardalsholl%20Sport%20Centre!5e0!3m2!1sen!2sis!4v1651615660783!5m2!1sen!2sis" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    
+  </main>
+  <footer>
+    <img src="images/logo.png" alt="">
+    <h3>Héðinn Már • Upplýsingatækniskólinn • Vefhönnun 2 • Vorönn 2022 • Lokaverkefni</h3>
+  </footer>
+</body>
+</html>
+
+
