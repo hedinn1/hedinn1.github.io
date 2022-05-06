@@ -93,7 +93,7 @@ main{
     box-shadow: 0 0 5em #00000065;
 }
 header{
-    background-image: linear-gradient(rgb(3 79 0 / 30%) 20%, rgb(255, 255, 255) 100%), url(images/banner.jpg);
+    background-image: linear-gradient(rgb(3 79 0 / 30%) 20%, rgb(255, 255, 255) 100%), url(/images/banner.jpg);
     height: 18em;
     background-size: contain;
     overflow: auto;
@@ -102,7 +102,9 @@ header{
     justify-content: flex-end;
     padding: 0 1em 1em;
 }
-
+.bold{
+    font-weight: 800;
+}
 header h2{
     margin: -18px 0 0;
     font-size: 1.2em;
@@ -170,9 +172,6 @@ td::before{content:none}
 thead{display:table-header-group}
 tr{display:table-row}
 td{text-align:left}
-.intro-text p{
-    font-size: 1.6em;
-}
 .intro{
     gap: 4em !important;
 }
