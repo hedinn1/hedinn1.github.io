@@ -22,10 +22,9 @@ class Obstacle {
 }
 
 const obstacles = [
-  new Obstacle(canvas.width / 4, canvas.height / 4, canvas.width / 6),
-  new Obstacle(canvas.width / 1.3, canvas.height / 4, canvas.width / 6),
-  new Obstacle(canvas.width / 1.3, canvas.height / 1.3, canvas.width / 6),
-  new Obstacle(canvas.width / 4, canvas.height / 1.3, canvas.width / 6)
+  new Obstacle(canvas.width / 3, canvas.height / 4, canvas.width / 6),
+  new Obstacle(canvas.width / 1.1, canvas.height / 2.4, canvas.width / 6),
+  new Obstacle(canvas.width / 1.3, canvas.height / 1.4, canvas.width / 6)
 ];
 
 obstacles.push();
@@ -243,10 +242,10 @@ let characters = []
 
 function declareCharacters() {
   characters = [
-    new Character(100, 100, radius, speed, speed, 'orange'),
-    new Character(100, canvas.height - 100, radius, speed, speed, 'red'),
-    new Character(canvas.width - 100, canvas.height -100, radius, speed, speed, 'green'),
-    new Character(canvas.width - 100, 100, radius, speed, speed, 'blue'),
+    new Character(50, 100, radius, speed, speed, 'orange'),
+    new Character(50, canvas.height - 100, radius, speed, speed, 'red'),
+    new Character(canvas.width - 50, canvas.height -100, radius, speed, speed, 'green'),
+    new Character(canvas.width - 50, 100, radius, speed, speed, 'blue'),
     new Character(canvas.width / 2, canvas.height / 2, radius, 0, 0, 'yellow', isPlayer = true)
     ];
 }
