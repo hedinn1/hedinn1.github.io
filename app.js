@@ -165,6 +165,41 @@ class Character {
             break;
         }
       });
+
+      // Touch
+
+      let initialX;
+let initialY;
+let currentX;
+let currentY;
+
+canvas.addEventListener("touchstart", (e) => {
+  initialX = e.touches[0].clientX;
+  initialY = e.touches[0].clientY;
+});
+
+canvas.addEventListener("touchmove", (e) => {
+  if (e.touches.length > 0) {
+    currentX = e.touches[0].clientX;
+    currentY = e.touches[0].clientY;
+    // Calculate the difference between the initial and current touch positions
+    let diffX = currentX - initialX;
+    let diffY = currentY - initialY;
+    // Update the player character's velocity based on the swipe direction
+    this.vx = diffX;
+    this.vy = diffY;
+  }
+});
+
+canvas.addEventListener("touchend", (e) => {
+  // Reset the initial touch position
+  initialX = 0;
+  initialY = 0;
+  // Reset the player character's velocity
+  this.vx = 0;
+  this.vy = 0;
+});
+
     }
 }
 }
