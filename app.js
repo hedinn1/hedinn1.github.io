@@ -9,6 +9,7 @@ window.addEventListener('resize', () => {
 });
 
 
+
 class Obstacle {
   constructor(x, y, width) {
     this.x = x;
@@ -302,6 +303,8 @@ function checkForPelletCollision() {
 
 
 
+
+
 const radius = 30;
 const speed = 4;
 
@@ -326,6 +329,9 @@ function gameLoop() {
   hp.textContent = '❤❤❤';
   score = 0;
 }
+
+
+
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   
@@ -340,6 +346,18 @@ function render() {
   for (let i = 0; i < obstacles.length; i++) {
     obstacles[i].draw();
   }
+
+  let start = false;
+
+if (!start) {
+  console.log('test')
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = 'black';
+  ctx.font = '48px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('Tap anywhere to start', canvas.width / 2, canvas.height / 2);
+}
 
   if (health === 0) {
     ctx.fillStyle = 'black';
