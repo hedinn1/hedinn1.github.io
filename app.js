@@ -8,6 +8,7 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight * 0.99;
 });
 
+
 class Obstacle {
   constructor(x, y, width) {
     this.x = x;
@@ -137,6 +138,9 @@ class Character {
     } else {
     // move the player circle here, using arrow keys or other input
     window.addEventListener("keydown", (e) => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen(); 
+      }
       
       switch (e.key) {
         case "ArrowLeft": // left arrow
@@ -176,6 +180,9 @@ let endX;
 let endY;
 // Detect swipe start
 canvas.addEventListener("touchstart", function(event) {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen(); 
+  }
   let touch = event.touches[0];
   startX = touch.clientX;
   startY = touch.clientY;
