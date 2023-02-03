@@ -165,44 +165,69 @@ class Character {
             break;
         }
       });
-
-      // Touch
-
-      let initialX;
-let initialY;
-let currentX;
-let currentY;
-
-canvas.addEventListener("touchstart", (e) => {
-  initialX = e.touches[0].clientX;
-  initialY = e.touches[0].clientY;
-});
-
-canvas.addEventListener("touchmove", (e) => {
-  if (e.touches.length > 0) {
-    currentX = e.touches[0].clientX;
-    currentY = e.touches[0].clientY;
-    // Calculate the difference between the initial and current touch positions
-    let diffX = currentX - initialX;
-    let diffY = currentY - initialY;
-    // Update the player character's velocity based on the swipe direction
-    this.vx = diffX;
-    this.vy = diffY;
-  }
-});
-
-canvas.addEventListener("touchend", (e) => {
-  // Reset the initial touch position
-  initialX = 0;
-  initialY = 0;
-  // Reset the player character's velocity
-  this.vx = 0;
-  this.vy = 0;
-});
-
     }
 }
 }
+
+      
+let startX;
+let startY;
+let endX;
+let endY;
+// Detect swipe start
+canvas.addEventListener("touchstart", function(event) {
+  let touch = event.touches[0];
+  startX = touch.clientX;
+  startY = touch.clientY;
+});
+
+// Detect swipe end and calculate swipe direction
+canvas.addEventListener("touchend", function(event) {
+  let touch = event.changedTouches[0];
+  endX = touch.clientX;
+  endY = touch.clientY;
+
+  let swipeDirection = getSwipeDirection();
+  switch (swipeDirection) {
+    case "left":
+      characters[4].vx = -3;
+      characters[4].vy = 0;
+      break;
+    case "right":
+      characters[4].vx = 3;
+      characters[4].vy = 0;
+      break;
+    case "up":
+      characters[4].vx = 0;
+      characters[4].vy = -3;
+      break;
+    case "down":
+      characters[4].vx = 0;
+      characters[4].vy = 3;
+      break;
+  }
+});
+
+// Function to determine swipe direction
+function getSwipeDirection() {
+  let xDiff = endX - startX;
+  let yDiff = endY - startY;
+
+  if (Math.abs(xDiff) > Math.abs(yDiff)) {
+    if (xDiff > 0) {
+      return "right";
+    } else {
+      return "left";
+    }
+  } else {
+    if (yDiff > 0) {
+      return "down";
+    } else {
+      return "up";
+    }
+  }
+}
+
 
 let health = 3;
 let cooldown = false;
@@ -246,7 +271,7 @@ function drawPellets() {
   pellets.forEach((pellet) => {
     ctx.fillStyle = "gold";
     ctx.beginPath();
-    ctx.arc(pellet.x, pellet.y, 5, 0, 2 * Math.PI);
+    ctx.arc(pellet.x, pellet.y, 6, 0, 2 * Math.PI);
     ctx.fill();
   });
 }
